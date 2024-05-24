@@ -7,10 +7,15 @@
     <body>
         <h1> Brython Test </h1>
         <script type="text/python">
-            print ("Hello - using brython from browser")
+            from browser import document, alert
+
+            def echo(event):
+                alert(document["zone"].value)
+    
+            document["mybutton"].bind("click", echo)
         </script>
 
-        <!-- <input id="zone"><button id="mybutton">click !</button> -->
+        <input id="zone"><button id="mybutton">click !</button>
 
     </body>
 
